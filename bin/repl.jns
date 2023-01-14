@@ -1,0 +1,16 @@
+from native import subprocess;
+#include <stdlib>
+
+fn evalc(code){
+    if(not code.endswith(";")){
+        code += "\n"+input("... ");
+        evalc(code);
+    }
+    else{
+        ...; // TODO
+    }
+}
+
+while(1){
+    evalc(input(">"));
+}
