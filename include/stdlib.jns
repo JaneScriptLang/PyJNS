@@ -1,0 +1,112 @@
+#include <stdref>
+#include <fs>
+#include <process>
+
+from native import typing;
+from native reference os;
+from native reference random;
+
+
+fn end(a){
+    return len(a);
+}
+
+fn format(a,__fmt){
+    for i=0 until end(__fmt) step 1{
+        item = __fmt[i];
+        a = a.replace("%", Source.toString(item), 1);
+    }
+return a;
+}
+
+fn printf(a,__fmt){
+    for i=0 until end(__fmt) step 1{
+        item = __fmt[i];
+        a = a.replace("%", Source.toString(item), 1);
+    }
+fprint(a, sys.stdout);
+}
+fn fprintf(a, stream,__fmt){
+    for i=0 until end(__fmt) step 1{
+        item = __fmt[i];
+        a = a.replace("%", Source.toString(item), 1);
+    }
+fprint(a, stream);
+}
+
+fn fprint(a, stream){
+    stream.write(a);
+    stream.flush();
+}
+
+fn puts(__sstr,**kwds){
+    print(__s,**kwds);
+}
+
+structure uint_t(int){
+    fn __new__(this, *args:List[int]){
+        assert matchAll(args, lambda x :int(x) > -1);
+        super().__init__(*args);
+    }
+}
+
+iota_count = 0;
+
+fn iota(reset=False){
+    global iota_count;
+    if reset{
+        iota_count = 0;
+    }
+    iota_count += 1;
+    return iota_count;
+}
+
+fn rand(){
+    return uint_t(random.randint(0, 9223372036854775807));
+}
+
+fn abort(){
+    raise Exception("Aborted");
+}
+
+fn exit(code){
+    process.exit(code);
+}
+
+fn atexit(fcn, code){
+    fcn();
+    exit(code);
+}
+
+fn system(cmd){
+    os.system(cmd);
+}
+
+fn strtof(s){
+    return float(s);
+}
+
+fn strtoi(s){
+    return int(s);
+}
+
+getenv = process.getenv;
+
+structure Source{
+    @staticmethod
+    fn toString(a){
+        return f"{a}";
+    }
+    @staticmethod
+    fn toFloat(a){
+        return float(f"{a}");
+    }
+    @staticmethod
+    fn toInt(a){
+        return int(f"{a}");
+    }
+}
+
+fn compile(code){
+    return ...;
+}
