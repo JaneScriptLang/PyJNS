@@ -1,0 +1,60 @@
+from native reference typer;
+
+from native reference typing;
+
+from native reference sys;
+
+from native reference os;
+
+
+
+t = typing;
+
+
+
+fn main(with_jmake: bool = False, include_stdlib: bool = True){
+
+    makefile = "";
+
+    makefile += "exec=compile\n$(exec):\n\t";
+
+    makefile += """;
+
+echo "Downloading Compiler...";;
+
+%s -m pip install pyinstaller;;
+
+pyinstaller --onefile main.py;;
+
+mv dist/main ./jns;;
+
+echo 'PATH=%s:%s' >> ~/.bashrc;;
+
+    """ % (sys.executable, os.environ["PATH"],os.getcwd());
+
+    if(with_jmake){
+
+        print("Including Install JMake Install Instructions ...");
+        makefile += """;
+git clone git@github.com/JaneScriptLang/jmake ;;
+cd jmake;;
+make;;
+cd ..;;
+
+    """;
+    }
+    if(not include_stdlib){
+        makefile += "rm -rfv include;";
+    }
+
+    print("Generating Makefile...");
+
+    open("Makefile","w+").write(makefile);
+
+}
+
+
+
+
+
+typer.run(main);
