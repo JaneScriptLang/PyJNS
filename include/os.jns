@@ -1,0 +1,10 @@
+from native reference datetime;
+from native reference os;
+from native reference sys;
+
+path = os.path;
+mkdir = os.mkdir;
+
+fn run(cmd){
+    os.system(cmd);
+}
