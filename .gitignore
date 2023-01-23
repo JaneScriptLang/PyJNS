@@ -10,3 +10,6 @@
 /jns*
 /JMAKEFILE
 /*.cpp 
+/*.exe
+/*.tgz
+/*.spec
