@@ -1,749 +1,1042 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 7.4.3.2 (Linux)"/>
-	<meta name="author" content="almut"/>
-	<meta name="created" content="2015-09-07T05:55:00Z"/>
-	<meta name="changed" content="2023-01-14T19:51:57.745303272"/>
-	<meta name="Info 1" content=""/>
-	<meta name="Info 2" content=""/>
-	<meta name="Info 3" content=""/>
-	<meta name="Info 4" content=""/>
-	<style type="text/css">
-		@page { size: 21cm 29.7cm; margin: 2.5cm }
-		@page:first { }
-		p { line-height: 150%; text-align: justify; margin-bottom: 0.1cm; background: transparent; page-break-before: auto }
-		p.western { font-family: "Arial", sans-serif; font-size: 12pt }
-		h1 { line-height: 150%; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
-		h1.western { font-family: "Arial", sans-serif; font-size: 16pt; font-weight: bold }
-		h1.cjk { font-family: "MS Mincho", monospace; font-size: 14pt; font-weight: bold }
-		h1.ctl { font-family: "Tahoma", sans-serif; font-size: 14pt; font-weight: bold }
-		h2 { line-height: 150%; margin-top: 0.3cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
-		h2.western { font-family: "Arial", sans-serif; font-size: 14pt; font-style: normal; font-weight: bold }
-		h2.cjk { font-family: "MS Mincho", monospace; font-size: 14pt; font-style: italic; font-weight: bold }
-		h2.ctl { font-family: "Tahoma", sans-serif; font-size: 14pt; font-style: italic; font-weight: bold }
-		h4 { color: #4f81bd; page-break-inside: avoid; margin-top: 0.35cm; margin-bottom: 0cm; background: transparent; page-break-before: auto; page-break-after: avoid }
-		h4.western { font-family: "Cambria", serif; font-style: italic; font-weight: bold }
-		h4.cjk { font-family: "Times New Roman", serif; font-style: italic; font-weight: bold }
-		h4.ctl { font-family: "Times New Roman", serif; font-style: italic; font-weight: bold }
-		p.index-western { line-height: 115%; margin-bottom: 0cm }
-		p.index-cjk { line-height: 115%; margin-bottom: 0cm }
-		p.index-ctl { font-family: "Tahoma", sans-serif; line-height: 115%; margin-bottom: 0cm }
-		p.contents-1 { line-height: 100%; text-align: left; margin-bottom: 0.2cm; direction: ltr }
-		p.contents-4-western { line-height: 115%; margin-bottom: 0cm }
-		p.contents-4-cjk { line-height: 115%; margin-bottom: 0cm }
-		p.contents-4-ctl { font-family: "Tahoma", sans-serif; line-height: 115%; margin-bottom: 0cm }
-		p.code-western { font-family: "FreeMono", monospace; background: transparent; margin-bottom: 0cm }
-		p.code-cjk { background: transparent; margin-bottom: 0cm }
-		p.code-ctl { background: transparent; margin-bottom: 0cm }
-		a:link { color: #000080; text-decoration: underline }
-		a.cjk:link { so-language: zxx }
-		a.ctl:link { so-language: zxx }
-		code { font-family: "Liberation Mono", monospace }
-	</style>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>JNS Documentation</title>
+  <meta name="generator" content="LibreOffice 7.4.3.2 (Linux)" />
+  <meta name="author" content="almut" />
+  <meta name="created" content="2015-09-07T05:55:00Z" />
+  <meta name="changed" content="2023-01-14T19:51:57.745303272" />
+  <meta name="Info 1" content="" />
+  <meta name="Info 2" content="" />
+  <meta name="Info 3" content="" />
+  <meta name="Info 4" content="" />
+  <style type="text/css">
+    @page {
+      size: 21cm 29.7cm;
+      margin: 2.5cm
+    }
+
+    @page: first {}
+
+    p {
+      line-height: 150%;
+      text-align: justify;
+      margin-bottom: 0.1cm;
+      background: transparent;
+      page-break-before: auto
+    }
+
+    p.western {
+      font-family: "Arial", sans-serif;
+      font-size: 12pt
+    }
+
+    h1 {
+      line-height: 150%;
+      margin-bottom: 0.21cm;
+      background: transparent;
+      page-break-after: avoid
+    }
+
+    h1.western {
+      font-family: "Arial", sans-serif;
+      font-size: 16pt;
+      font-weight: bold
+    }
+
+    h1.cjk {
+      font-family: "MS Mincho", monospace;
+      font-size: 14pt;
+      font-weight: bold
+    }
+
+    h1.ctl {
+      font-family: "Tahoma", sans-serif;
+      font-size: 14pt;
+      font-weight: bold
+    }
+
+    h2 {
+      line-height: 150%;
+      margin-top: 0.3cm;
+      margin-bottom: 0.21cm;
+      background: transparent;
+      page-break-after: avoid
+    }
+
+    h2.western {
+      font-family: "Arial", sans-serif;
+      font-size: 14pt;
+      font-style: normal;
+      font-weight: bold
+    }
+
+    h2.cjk {
+      font-family: "MS Mincho", monospace;
+      font-size: 14pt;
+      font-style: italic;
+      font-weight: bold
+    }
+
+    h2.ctl {
+      font-family: "Tahoma", sans-serif;
+      font-size: 14pt;
+      font-style: italic;
+      font-weight: bold
+    }
+
+    h4 {
+      color: #4f81bd;
+      page-break-inside: avoid;
+      margin-top: 0.35cm;
+      margin-bottom: 0cm;
+      background: transparent;
+      page-break-before: auto;
+      page-break-after: avoid
+    }
+
+    h4.western {
+      font-family: "Cambria", serif;
+      font-style: italic;
+      font-weight: bold
+    }
+
+    h4.cjk {
+      font-family: "Times New Roman", serif;
+      font-style: italic;
+      font-weight: bold
+    }
+
+    h4.ctl {
+      font-family: "Times New Roman", serif;
+      font-style: italic;
+      font-weight: bold
+    }
+
+    p.index-western {
+      line-height: 115%;
+      margin-bottom: 0cm
+    }
+
+    p.index-cjk {
+      line-height: 115%;
+      margin-bottom: 0cm
+    }
+
+    p.index-ctl {
+      font-family: "Tahoma", sans-serif;
+      line-height: 115%;
+      margin-bottom: 0cm
+    }
+
+    p.contents-1 {
+      line-height: 100%;
+      text-align: left;
+      margin-bottom: 0.2cm;
+      direction: ltr
+    }
+
+    p.contents-4-western {
+      line-height: 115%;
+      margin-bottom: 0cm
+    }
+
+    p.contents-4-cjk {
+      line-height: 115%;
+      margin-bottom: 0cm
+    }
+
+    p.contents-4-ctl {
+      font-family: "Tahoma", sans-serif;
+      line-height: 115%;
+      margin-bottom: 0cm
+    }
+
+    p.code-western {
+      font-family: "FreeMono", monospace;
+      background: transparent;
+      margin-bottom: 0cm
+    }
+
+    p.code-cjk {
+      background: transparent;
+      margin-bottom: 0cm
+    }
+
+    p.code-ctl {
+      background: transparent;
+      margin-bottom: 0cm
+    }
+
+    a:link {
+      color: #000080;
+      text-decoration: underline
+    }
+
+    a.cjk:link {
+      so-language: zxx
+    }
+
+    a.ctl:link {
+      so-language: zxx
+    }
+
+    code {
+      font-family: "Liberation Mono", monospace
+    }
+  </style>
 </head>
+
 <body lang="de-DE" link="#000080" vlink="#800000" dir="ltr">
-<div id="Table of Contents1" dir="ltr">
-	<div id="Inhaltsverzeichnis1_Head" dir="ltr"><p align="left" style="line-height: 115%; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
-		<font size="4" style="font-size: 16pt"><b>Table of Contents</b></font></p>
-	</div>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc761_607794265">1
-	 Introduction	2</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc424_1684061004">2
-	 Tutorials	2</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc213_2580831390">3
-	 JNS References	2</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc215_2580831390">3.1
-	 JNS Changelog	2</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc233_2580831390">3.2
-	 JNS Language Fundamentals	2</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc235_2580831390">3.3
-	 JNS Control Statements	2</a></p>
-	<p class="contents-4-western"><a class="western" href="#__RefHeading___Toc737_2114970337">Conditional
-	Statements	3</a></p>
-	<p class="contents-4-western"><a class="western" href="#__RefHeading___Toc739_2114970337">Loop
-	Statements	5</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc239_2580831390">3.4
-	 JNS Subprograms	6</a></p>
-	<p class="contents-4-western"><a class="western" href="#__RefHeading___Toc741_2114970337">Reasons
-	to use Subprograms	6</a></p>
-	<p class="contents-4-western"><a class="western" href="#__RefHeading___Toc743_2114970337">Declaration
-	and Invocation	7</a></p>
-	<p class="contents-4-western"><a class="western" href="#__RefHeading___Toc745_2114970337">Recursive
-	Subprograms	8</a></p>
-	<p class="contents-4-western"><a class="western" href="#__RefHeading___Toc747_2114970337">Subprograms
-	in Packages	9</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc241_2580831390">3.5
-	 JNS Packages and R4-Notation	9</a></p>
-	<p class="contents-4-western"><a class="western" href="#__RefHeading___Toc749_2114970337">Reasons
-	to use Packages	10</a></p>
-	<p class="contents-4-western"><a class="western" href="#__RefHeading___Toc751_2114970337">Declaration
-	(Pre-R4)	10</a></p>
-	<p class="contents-4-western"><a class="western" href="#__RefHeading___Toc753_2114970337">Declaration
-	(Post-R4)	11</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc243_2580831390">3.6
-	 JNS Pragma List	11</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc344_2763220959">4
-	 Additional Information	12</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc561_3515687002">4.1
-	 Download-URLs	12</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc735_2675629773">4.2
-	 Literaturverzeichnis	12</a></p>
-	<p class="contents-1"><a class="western" href="#__RefHeading___Toc763_607794265">4.3
-	 Abbildungsverzeichnis	12</a></p>
-</div>
-<p class="western"><br/>
-<br/>
+  <div id="Table of Contents1" dir="ltr">
+    <div id="Inhaltsverzeichnis1_Head" dir="ltr">
+      <p align="left" style="line-height: 115%; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+        <font size="4" style="font-size: 16pt"><b>Table of Contents</b></font>
+      </p>
+    </div>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc761_607794265">1
+        Introduction 2</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc424_1684061004">2
+        Tutorials 2</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc213_2580831390">3
+        JNS References 2</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc215_2580831390">3.1
+        JNS Changelog 2</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc233_2580831390">3.2
+        JNS Language Fundamentals 2</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc235_2580831390">3.3
+        JNS Control Statements 2</a></p>
+    <p class="contents-4-western"><a class="western" href="#__RefHeading___Toc737_2114970337">Conditional
+        Statements 3</a></p>
+    <p class="contents-4-western"><a class="western" href="#__RefHeading___Toc739_2114970337">Loop
+        Statements 5</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc239_2580831390">3.4
+        JNS Subprograms 6</a></p>
+    <p class="contents-4-western"><a class="western" href="#__RefHeading___Toc741_2114970337">Reasons
+        to use Subprograms 6</a></p>
+    <p class="contents-4-western"><a class="western" href="#__RefHeading___Toc743_2114970337">Declaration
+        and Invocation 7</a></p>
+    <p class="contents-4-western"><a class="western" href="#__RefHeading___Toc745_2114970337">Recursive
+        Subprograms 8</a></p>
+    <p class="contents-4-western"><a class="western" href="#__RefHeading___Toc747_2114970337">Subprograms
+        in Packages 9</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc241_2580831390">3.5
+        JNS Packages and R4-Notation 9</a></p>
+    <p class="contents-4-western"><a class="western" href="#__RefHeading___Toc749_2114970337">Reasons
+        to use Packages 10</a></p>
+    <p class="contents-4-western"><a class="western" href="#__RefHeading___Toc751_2114970337">Declaration
+        (Pre-R4) 10</a></p>
+    <p class="contents-4-western"><a class="western" href="#__RefHeading___Toc753_2114970337">Declaration
+        (Post-R4) 11</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc243_2580831390">3.6
+        JNS Pragma List 11</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc344_2763220959">4
+        Additional Information 12</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc561_3515687002">4.1
+        Download-URLs 12</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc735_2675629773">4.2
+        Literaturverzeichnis 12</a></p>
+    <p class="contents-1"><a class="western" href="#__RefHeading___Toc763_607794265">4.3
+        Abbildungsverzeichnis 12</a></p>
+  </div>
+  <p class="western"><br />
+    <br />
 
-</p>
-<h1 class="western" style="page-break-before: always"><a name="__RefHeading___Toc761_607794265"></a>
-1 Introduction</h1>
-<p class="western">JNS is a dynamically typed transpiled Programming
-Language designed for building maintainable software. It's based off
-Python and its design has also been influenced by V, Rust, C and
-(Believe it or not) ALGOL.</p>
-<p class="western">JNS is not a very hard language. Going through
-this documentation will take you about an hour, and by the end of it
-you will have pretty much learned the entire language. The language
-promotes writing simple and clear code with minimal abstraction.
-Despite being simple, JNS gives the developer a lot of power.
-Anything you can do in other Python, you can do in JNS.</p>
-<h2 class="western">1.1 Installation from Source</h2>
-<p class="western">The best way to get the latest and greatest V, is
-to install it from source. It is easy, and it takes only about a
-minute:</p>
-<p class="code-western">git clone
-https://github.com/JaneScriptLang/PyJNS</p>
-<p class="code-western">cd PyJNS</p>
-<p class="code-western">./prepare -–with-jmake # Assuming you want
-JMake installed</p>
-<p class="code-western">make</p>
-<p class="code-western"># HINT: Using Windows?: run bootstrap-win in
-the cmd.exe shell</p>
-<h2 class="western">1.2 Testing and running samples</h2>
-<p class="western">Make sure JNS can run itself, by executing the
-following commands in the cmd.exe Shell (Inside the JNS Install
-Directory):</p>
-<p class="code-western">$ jns ./bin/repl.jns</p>
-<p class="code-western"><br/>
+  </p>
+  <h1 class="western" style="page-break-before: always"><a name="__RefHeading___Toc761_607794265"></a>
+    1 Introduction</h1>
+  <p class="western">JNS is a dynamically typed transpiled Programming
+    Language designed for building maintainable software. It's based off
+    Python and its design has also been influenced by V, Rust, C and
+    (Believe it or not) ALGOL.</p>
+  <p class="western">JNS is not a very hard language. Going through
+    this documentation will take you about an hour, and by the end of it
+    you will have pretty much learned the entire language. The language
+    promotes writing simple and clear code with minimal abstraction.
+    Despite being simple, JNS gives the developer a lot of power.
+    Anything you can do in other Python, you can do in JNS.</p>
+  <h2 class="western">1.1 Installation from Source</h2>
+  <p class="western">The best way to get the latest and greatest JNS, is
+    to install it from source. It is easy, and it takes only about a
+    minute:</p>
+  <p class="code-western">git clone
+    https://github.com/JaneScriptLang/PyJNS</p>
+  <p class="code-western">cd PyJNS</p>
 
-</p>
-<p class="code-western">JNS R2, 0.2.0</p>
-<p class="code-western">&gt;&gt;&gt; #include &lt;bin/jtest&gt;</p>
-<p class="code-western">&gt;&gt;&gt; test()</p>
-<p class="code-western"><br/>
+  <p class="code-western">./prepare -–with-jmake && make # Assuming you want
+    JMake installed, on Linux</p>
+  <p class="code-western">./build/python ./bootstrap-win.py</p>
+  <h2 class="western">1.2 Testing and running samples</h2>
+  <p class="western">Make sure JNS can run itself, by executing the
+    following commands in the cmd.exe Shell (Inside the JNS Install
+    Directory):</p>
+  <p class="code-western">$ jns ./bin/test.jns</p>
+  <p class="code-western"><br />
 
-</p>
-<p class="code-western">$ cd examples</p>
-<p class="code-western">$ jns hello_world.jns</p>
-<p class="code-western">$ jns wc/word_counter.jns wc/beemovie.txt</p>
-<p class="code-western">$ jns se/se.jns</p>
-<h1 class="western"><a name="__RefHeading___Toc424_1684061004"></a>2 Simple
-Examples</h1>
-<h2 class="western">2.1 Table of Contents</h2>
-<p class="western">In this section, we’ll show you the three most
-simple things possible in JNS.</p>
-<ul>
-	<li><p class="western">Hello World!</p>
-	<li><p class="western">Taking input and using Variables</p>
-	<li><p class="western">Comments</p>
-</ul>
-<p class="western">For more complex projects, please read #3.2,
-Control Statements</p>
-<h2 class="western">2.2 Hello, World!</h2>
-<p class="western">As in every  other language, your very first
-Program will be a „Hello, World!“ Script… literally, just a
-single line, outputting „Hello World“ to your screen. In JNS,
-this statement is exactly:</p>
-<p class="code-western">print(„Hello, World!“);</p>
-<p class="western"><br/>
-<br/>
+  </p>
+  <p class="code-western">$ cd examples</p>
+  <p class="code-western">$ jns hello_world.jns</p>
+  <p class="code-western">$ jns wc/word_counter.jns wc/beemovie.txt</p>
+  <p class="code-western">$ jns se/se.jns</p>
+  <h1 class="western"><a name="__RefHeading___Toc424_1684061004"></a>2 Simple
+    Examples</h1>
+  <h2 class="western">2.1 Table of Contents</h2>
+  <p class="western">In this section, we’ll show you the three most
+    simple things possible in JNS.</p>
+  <ul>
+    <li>
+      <p class="western">Hello World!</p>
+    <li>
+      <p class="western">Taking input and using Variables</p>
+    <li>
+      <p class="western">Comments</p>
+  </ul>
+  <p class="western">For more complex projects, please read #3.2,
+    Control Statements</p>
+  <h2 class="western">2.2 Hello, World!</h2>
+  <p class="western">As in every other language, your very first
+    Program will be a „Hello, World!“ Script… literally, just a
+    single line, outputting „Hello World“ to your screen. In JNS,
+    this statement is exactly:</p>
+  <p class="code-western">print(„Hello, World!“);</p>
+  <p class="western"><br />
+    <br />
 
-</p>
-<h2 class="western">2.3 Taking input and using Variables</h2>
-<p class="western">Variables are a way to store data. Since JNS is
-dynamically typed, you won’t have to add the Type of the Variable
-to the delcaration. What in C looks like <font face="FreeMono, monospace">int
-age = 0; </font><font face="Arial, sans-serif">in JNS looks like </font><font face="FreeMono, monospace">age
-= 0;</font><font face="Arial, sans-serif">. </font><font face="Arial, sans-serif">Look
-at how simple this code is:</font></p>
-<p class="code-western">#include &lt;stdlib&gt;</p>
-<p class="code-western">name = input(„What’s your Name?“);</p>
-<p class="code-western">printf(„Hello, %!“, (name,));</p>
-<p class="code-western"><br/>
+  </p>
+  <h2 class="western">2.3 Taking input and using Variables</h2>
+  <p class="western">Variables are a way to store data. Since JNS is
+    dynamically typed, you won’t have to add the Type of the Variable
+    to the declaration. What in C looks like <font face="FreeMono, monospace">int
+      age = 0; </font>
+    <font face="Arial, sans-serif">in JNS looks like </font>
+    <font face="FreeMono, monospace">age
+      = 0;</font>
+    <font face="Arial, sans-serif">. </font>
+    <font face="Arial, sans-serif">Look
+      at how simple this code is:</font>
+  </p>
+  <p class="code-western">#include &lt;stdlib&gt;</p>
+  <p class="code-western">name = input(„What’s your Name?“);</p>
+  <p class="code-western">printf(„Hello, %!“, (name,));</p>
+  <p class="code-western"><br />
 
-</p>
-<h2 class="western">2.4 Comments</h2>
-<p class="western">A Comment („//“) will remove all text after
-the comment decorator. So this: <font face="FreeMono, monospace">print(„Hello,
-World!“); // Will print „Hello, World!“ </font><font face="Arial, sans-serif">works
-the same as just </font><font face="FreeMono, monospace">print(„Hello,
-World!“); </font><font face="Arial, sans-serif">Comments are useful
-when writing complex code, so you don’t lose overview of what
-you’re writing.</font></p>
-<h1 class="western"><a name="__RefHeading___Toc213_2580831390"></a>3 JNS
-References</h1>
-<h2 class="western"><a name="__RefHeading___Toc215_2580831390"></a>3.1 JNS
-Changelog</h2>
-<p class="western"><br/>
-<br/>
+  </p>
+  <h2 class="western">2.4 Comments</h2>
+  <p class="western">A Comment („//“) will remove all text after
+    the comment decorator. So this: <font face="FreeMono, monospace">print(„Hello,
+      World!“); // Will print „Hello, World!“ </font>
+    <font face="Arial, sans-serif">works
+      the same as just </font>
+    <font face="FreeMono, monospace">print(„Hello,
+      World!“); </font>
+    <font face="Arial, sans-serif">Comments are useful
+      when writing complex code, so you don’t lose overview of what
+      you’re writing.</font>
+  </p>
+  <h1 class="western"><a name="__RefHeading___Toc213_2580831390"></a>3 JNS
+    References</h1>
+  <h2 class="western"><a name="__RefHeading___Toc215_2580831390"></a>3.1 JNS
+    Changelog</h2>
+  <p class="western"><br />
+    <br />
 
-</p>
-<p class="western">Since R2, JNS has received the following changes:</p>
-<ul>
-	<li><p class="western">Swap Indentation with curly opening/closing
-	braces</p>
-	<li><p class="western"></p>
-</ul>
-<h2 class="western"><a name="__RefHeading___Toc235_2580831390"></a>3.2 JNS
-Control Statements</h2>
-<p class="western">JNS has three categories of control Statements:
-Conditional Statements, Loop Statements and Pragma-Statements</p>
-<ul>
-	<li><p class="western"><a name="__RefHeading___Toc237_2580831390"></a>
-	<b>Conditional Statements</b><span style="font-weight: normal">,
-	which run different statements for different data values.</span></p>
-</ul>
-<p class="western"><span style="font-weight: normal">	The Conditional
-Statements are </span><b>IF</b><span style="font-weight: normal">,
-</span><b>ELSE IF</b><span style="font-weight: normal"> and </span><b>ELSE</b></p>
-<ul>
-	<li><p class="western"><b>Loop Statements</b><span style="font-weight: normal">,
-	which repeat Segments of code </span><i><span style="font-weight: normal">n</span></i><span style="font-weight: normal">
-	times, whereas n can be a definite number or a call to a Function
-	that returns an integer. The exception to this are WHILE-Loops, that
-	repeat a Code segment until a condition is met.</span></p>
-	<p class="western"><span style="font-weight: normal">The Loop
-	Statements are </span><b><span style="text-decoration: none">FOR/UNTIL,
-	FOREACH </span></b><span style="text-decoration: none"><span style="font-weight: normal">and
-	</span></span><b><span style="text-decoration: none">WHILE</span></b></p>
-	<li><p class="western"><span style="text-decoration: none"><b>Pragmas</b></span><span style="text-decoration: none"><span style="font-weight: normal">,
-	which are parameters passed into the Transpiler after reading the
-	script, but before transpiling anything to Pythonic Code. Pragmas
-	consist of a Name and a Value, </span></span><span style="text-decoration: none"><span style="font-weight: normal">provid</span></span><span style="text-decoration: none"><span style="font-weight: normal">ing</span></span><span style="text-decoration: none"><span style="font-weight: normal">
-	extra required details to the C compiler. These extra details can be
-	anything that was somehow not passed within the program or the code
-	logic. </span></span><span style="text-decoration: none"><span style="font-weight: normal">A
-	Pragma Declaration looks like this: </span></span><span style="text-decoration: none"><b>#pragma
-	name,value  </b></span><span style="text-decoration: none"><span style="font-weight: normal">.
-	A List of PyJNS-Specific Pragmas can be found in 3.6</span></span></p>
-</ul>
-<p class="western"><span style="text-decoration: none"><b>T</b></span><span style="text-decoration: none"><b>OPICS</b></span></p>
-<ul>
-	<li><p class="western"><b>Conditional Statements</b></p>
-	<li><p class="western"><b>For/Until</b></p>
-	<li><p class="western"><b>While</b></p>
-</ul>
-<h4 class="western"><a name="__RefHeading___Toc737_2114970337"></a>Conditional
-Statements</h4>
-<p class="western">The <b>Conditional Statements, </b><font face="FreeMono, monospace"><span style="font-weight: normal">IF
-</span></font><font face="Arial, sans-serif"><span style="font-weight: normal">and
-</span></font><font face="FreeMono, monospace"><span style="font-weight: normal">ELSE
-</span></font><font face="Arial, sans-serif"><span style="font-weight: normal">run
-different statements for different Data Values</span></font></p>
-<p class="western" style="font-weight: normal"><br/>
-<br/>
+  </p>
+  <p class="western">Since R2, JNS has received the following changes:</p>
+  <ul>
+    <li>
+      <p class="western">Swap Indentation with curly opening/closing
+        braces</p>
+    <li>
+      <p class="western"></p>
+  </ul>
+  <h2 class="western"><a name="__RefHeading___Toc235_2580831390"></a>3.2 JNS
+    Control Statements</h2>
+  <p class="western">JNS has three categories of control Statements:
+    Conditional Statements, Loop Statements and Pragma-Statements</p>
+  <ul>
+    <li>
+      <p class="western"><a name="__RefHeading___Toc237_2580831390"></a>
+        <b>Conditional Statements</b><span style="font-weight: normal">,
+          which run different statements for different data values.</span>
+      </p>
+  </ul>
+  <p class="western"><span style="font-weight: normal"> The Conditional
+      Statements are </span><b>IF</b><span style="font-weight: normal">,
+    </span><b>ELSE IF</b><span style="font-weight: normal"> and </span><b>ELSE</b></p>
+  <ul>
+    <li>
+      <p class="western"><b>Loop Statements</b><span style="font-weight: normal">,
+          which repeat Segments of code </span><i><span style="font-weight: normal">n</span></i><span
+          style="font-weight: normal">
+          times, whereas n can be a definite number or a call to a Function
+          that returns an integer. The exception to this are WHILE-Loops, that
+          repeat a Code segment until a condition is met.</span></p>
+      <p class="western"><span style="font-weight: normal">The Loop
+          Statements are </span><b><span style="text-decoration: none">FOR/UNTIL,
+            FOREACH </span></b><span style="text-decoration: none"><span style="font-weight: normal">and
+          </span></span><b><span style="text-decoration: none">WHILE</span></b></p>
+    <li>
+      <p class="western"><span style="text-decoration: none"><b>Pragmas</b></span><span
+          style="text-decoration: none"><span style="font-weight: normal">,
+            which are parameters passed into the Transpiler after reading the
+            script, but before transpiling anything to Pythonic Code. Pragmas
+            consist of a Name and a Value, </span></span><span style="text-decoration: none"><span
+            style="font-weight: normal">provid</span></span><span style="text-decoration: none"><span
+            style="font-weight: normal">ing</span></span><span style="text-decoration: none"><span
+            style="font-weight: normal">
+            extra required details to the C compiler. These extra details can be
+            anything that was somehow not passed within the program or the code
+            logic. </span></span><span style="text-decoration: none"><span style="font-weight: normal">A
+            Pragma Declaration looks like this: </span></span><span style="text-decoration: none"><b>#pragma
+            name,value </b></span><span style="text-decoration: none"><span style="font-weight: normal">.
+            A List of PyJNS-Specific Pragmas can be found in 3.6</span></span></p>
+  </ul>
+  <p class="western"><span style="text-decoration: none"><b>T</b></span><span
+      style="text-decoration: none"><b>OPICS</b></span></p>
+  <ul>
+    <li>
+      <p class="western"><b>Conditional Statements</b></p>
+    <li>
+      <p class="western"><b>For/Until</b></p>
+    <li>
+      <p class="western"><b>While</b></p>
+  </ul>
+  <h4 class="western"><a name="__RefHeading___Toc737_2114970337"></a>Conditional
+    Statements</h4>
+  <p class="western">The <b>Conditional Statements, </b>
+    <font face="FreeMono, monospace"><span style="font-weight: normal">IF
+      </span></font>
+    <font face="Arial, sans-serif"><span style="font-weight: normal">and
+      </span></font>
+    <font face="FreeMono, monospace"><span style="font-weight: normal">ELSE
+      </span></font>
+    <font face="Arial, sans-serif"><span style="font-weight: normal">run
+        different statements for different Data Values</span></font>
+  </p>
+  <p class="western" style="font-weight: normal"><br />
+    <br />
 
-</p>
-<p class="western"><font face="Arial, sans-serif"><b>The If/Then
-Statement</b></font></p>
-<p class="western" style="font-weight: normal">The <b>If/Then
-</b>Statement either runs or skips a Sequence of one or more
-Statements, depending on a condition. It follows the following
-structure:</p>
-<p class="code-western">if(condition){</p>
-<p class="code-western">	print(„Statements here...“);</p>
-<p class="code-western">}</p>
-<p class="western" style="font-weight: normal"><font face="Arial, sans-serif">If
-<i>condition</i><span style="font-style: normal"> is equal to a
-boolean </span><i>True</i><span style="font-style: normal">, the
-</span><i>statements</i><span style="font-style: normal"> run;
-otherwise the </span><i>if/then</i><span style="font-style: normal">-Statement
-does nothing.</span></font></p>
-<p class="western" style="font-style: normal; font-weight: normal"><br/>
-<br/>
+  </p>
+  <p class="western">
+    <font face="Arial, sans-serif"><b>The If/Then
+        Statement</b></font>
+  </p>
+  <p class="western" style="font-weight: normal">The <b>If/Then
+    </b>Statement either runs or skips a Sequence of one or more
+    Statements, depending on a condition. It follows the following
+    structure:</p>
+  <p class="code-western">if(condition){</p>
+  <p class="code-western"> print(„Statements here...“);</p>
+  <p class="code-western">}</p>
+  <p class="western" style="font-weight: normal">
+    <font face="Arial, sans-serif">If
+      <i>condition</i><span style="font-style: normal"> is equal to a
+        boolean </span><i>True</i><span style="font-style: normal">, the
+      </span><i>statements</i><span style="font-style: normal"> run;
+        otherwise the </span><i>if/then</i><span style="font-style: normal">-Statement
+        does nothing.</span>
+    </font>
+  </p>
+  <p class="western" style="font-style: normal; font-weight: normal"><br />
+    <br />
 
-</p>
-<p class="western" style="font-style: normal; font-weight: normal"><font face="Arial, sans-serif">TIP:
-    Avoid redundant IF/THEN/ELSE Statements such as:</font></p>
-<p class="code-western">if(new_balance &lt; minimum_balance){</p>
-<p class="code-western">	overdrawn = True;</p>
-<p class="code-western">} else {</p>
-<p class="code-western">	overdrawn = False;</p>
-<p class="code-western">}</p>
-<p class="western" style="font-weight: normal"><font face="Arial, sans-serif"><span style="font-style: normal">Instead,
-assign the Boolean Value  of</span><i> condition</i><span style="font-style: normal">
-directly to a Boolean Variable:</span></font></p>
-<p class="western" style="font-style: normal; font-weight: normal"><font face="FreeMono, monospace">overdrawn
-= (new_balance &lt; minimum_balance);</font></p>
-<p class="western" style="font-weight: normal"><font face="Arial, sans-serif"><span style="font-style: normal">A</span><i>
-Boolean</i><span style="font-style: normal"> Variable is either</span><i>
-True</i><span style="font-style: normal"> or</span><i> False. None
-</i><span style="font-style: normal">has the same properties as</span><i>
-False</i><span style="font-style: normal">, so avoid statements like
-this:</span></font></p>
-<p class="code-western">if(overdrawn==True){</p>
-<p class="code-western">	throw(InsufficientFundsError());</p>
-<p class="code-western">}</p>
-<p class="western" style="font-style: normal; font-weight: normal"><font face="Arial, sans-serif">Instead,
-write:</font></p>
-<p class="code-western">if(overdrawn){</p>
-<p class="code-western">	throw(InsufficientFundsError());</p>
-<p class="code-western">}</p>
-<p class="code-western"><br/>
+  </p>
+  <p class="western" style="font-style: normal; font-weight: normal">
+    <font face="Arial, sans-serif">TIP:
+      Avoid redundant IF/THEN/ELSE Statements such as:</font>
+  </p>
+  <p class="code-western">if(new_balance &lt; minimum_balance){</p>
+  <p class="code-western"> overdrawn = True;</p>
+  <p class="code-western">} else {</p>
+  <p class="code-western"> overdrawn = False;</p>
+  <p class="code-western">}</p>
+  <p class="western" style="font-weight: normal">
+    <font face="Arial, sans-serif"><span style="font-style: normal">Instead,
+        assign the Boolean Value of</span><i> condition</i><span style="font-style: normal">
+        directly to a Boolean Variable:</span></font>
+  </p>
+  <p class="western" style="font-style: normal; font-weight: normal">
+    <font face="FreeMono, monospace">overdrawn
+      = (new_balance &lt; minimum_balance);</font>
+  </p>
+  <p class="western" style="font-weight: normal">
+    <font face="Arial, sans-serif"><span style="font-style: normal">A</span><i>
+        Boolean</i><span style="font-style: normal"> Variable is either</span><i>
+        True</i><span style="font-style: normal"> or</span><i> False. None
+      </i><span style="font-style: normal">has the same properties as</span><i>
+        False</i><span style="font-style: normal">, so avoid statements like
+        this:</span></font>
+  </p>
+  <p class="code-western">if(overdrawn==True){</p>
+  <p class="code-western"> throw(InsufficientFundsError());</p>
+  <p class="code-western">}</p>
+  <p class="western" style="font-style: normal; font-weight: normal">
+    <font face="Arial, sans-serif">Instead,
+      write:</font>
+  </p>
+  <p class="code-western">if(overdrawn){</p>
+  <p class="code-western"> throw(InsufficientFundsError());</p>
+  <p class="code-western">}</p>
+  <p class="code-western"><br />
 
-</p>
-<p class="western" style="font-style: normal"><font face="Arial, sans-serif"><b>Ex.
-3.3.1: IF/THEN</b></font></p>
-<p class="western" style="font-style: normal; font-weight: normal"><font face="Arial, sans-serif">The
-following function will return a success Response if and only if the
-user is authenticated</font></p>
-<p class="code-western">fn dashboard(req, res){</p>
-<p class="code-western">	session = req.get_session();</p>
-<p class="code-western">	if(session[„authenticated“]){</p>
-<p class="code-western">		res.write(„Authenticated“);</p>
-<p class="code-western">		res.code(200);</p>
-<p class="code-western">	}</p>
-<p class="code-western"><font face="FreeMono, monospace"><span style="font-weight: normal">}</span></font>
-</p>
-<p class="western" style="font-weight: normal"> <font face="Arial, sans-serif"><span style="font-style: normal"><br/>
-</span><span style="font-style: normal"><b>The
-If/Then/</b></span><span style="font-style: normal"><b>Else</b></span><span style="font-style: normal"><b>
-Statement</b></span></font></p>
-<p class="western" style="font-weight: normal">The <b>If/Then/</b><b>Else</b><b>
-</b>Statement follows the following structure:</p>
-<p class="code-western">if(condition){</p>
-<p class="code-western">	print(„If-Statements here...“);</p>
-<p class="code-western">} else {</p>
-<p class="code-western">	print(„Else-Statements here...“)</p>
-<p class="code-western">}</p>
-<p class="western" style="font-weight: normal"><font face="Arial, sans-serif"><span style="font-style: normal">If
-</span><i>condition</i><span style="font-style: normal"> is equal to
-a boolean </span><i>True</i><span style="font-style: normal">, the
-</span><i>if-</i><i>statements</i><span style="font-style: normal">
-run; otherwise the </span><i>else</i><span style="font-style: normal">-</span><span style="font-style: normal">Block
-will run</span><span style="font-style: normal">. </span><span style="font-style: normal">If/Then
-and If/Then/Else Statements can be nested.</span></font></p>
-<p class="western" style="font-style: normal; font-weight: normal"><br/>
-<br/>
+  </p>
+  <p class="western" style="font-style: normal">
+    <font face="Arial, sans-serif"><b>Ex.
+        3.3.1: IF/THEN</b></font>
+  </p>
+  <p class="western" style="font-style: normal; font-weight: normal">
+    <font face="Arial, sans-serif">The
+      following function will return a success Response if and only if the
+      user is authenticated</font>
+  </p>
+  <p class="code-western">fn dashboard(req, res){</p>
+  <p class="code-western"> session = req.get_session();</p>
+  <p class="code-western"> if(session[„authenticated“]){</p>
+  <p class="code-western"> res.write(„Authenticated“);</p>
+  <p class="code-western"> res.code(200);</p>
+  <p class="code-western"> }</p>
+  <p class="code-western">
+    <font face="FreeMono, monospace"><span style="font-weight: normal">}</span></font>
+  </p>
+  <p class="western" style="font-weight: normal">
+    <font face="Arial, sans-serif"><span style="font-style: normal"><br />
+      </span><span style="font-style: normal"><b>The
+          If/Then/</b></span><span style="font-style: normal"><b>Else</b></span><span style="font-style: normal"><b>
+          Statement</b></span></font>
+  </p>
+  <p class="western" style="font-weight: normal">The <b>If/Then/</b><b>Else</b><b>
+    </b>Statement follows the following structure:</p>
+  <p class="code-western">if(condition){</p>
+  <p class="code-western"> print(„If-Statements here...“);</p>
+  <p class="code-western">} else {</p>
+  <p class="code-western"> print(„Else-Statements here...“)</p>
+  <p class="code-western">}</p>
+  <p class="western" style="font-weight: normal">
+    <font face="Arial, sans-serif"><span style="font-style: normal">If
+      </span><i>condition</i><span style="font-style: normal"> is equal to
+        a boolean </span><i>True</i><span style="font-style: normal">, the
+      </span><i>if-</i><i>statements</i><span style="font-style: normal">
+        run; otherwise the </span><i>else</i><span style="font-style: normal">-</span><span
+        style="font-style: normal">Block
+        will run</span><span style="font-style: normal">. </span><span style="font-style: normal">If/Then
+        and If/Then/Else Statements can be nested.</span></font>
+  </p>
+  <p class="western" style="font-style: normal; font-weight: normal"><br />
+    <br />
 
-</p>
-<p class="western" style="font-style: normal"><font face="Arial, sans-serif"><b>Ex.
-3.3.2: IF/THEN/ELSE</b></font></p>
-<p class="western" style="font-style: normal"><font face="Arial, sans-serif"><span style="font-weight: normal">The
-following function will return a success Response if the user is
-authenticated, </span><span style="font-weight: normal">else redirect
-him to the login Page</span></font></p>
-<p class="western" style="font-style: normal; font-weight: normal"><br/>
-<br/>
+  </p>
+  <p class="western" style="font-style: normal">
+    <font face="Arial, sans-serif"><b>Ex.
+        3.3.2: IF/THEN/ELSE</b></font>
+  </p>
+  <p class="western" style="font-style: normal">
+    <font face="Arial, sans-serif"><span style="font-weight: normal">The
+        following function will return a success Response if the user is
+        authenticated, </span><span style="font-weight: normal">else redirect
+        him to the login Page</span></font>
+  </p>
+  <p class="western" style="font-style: normal; font-weight: normal"><br />
+    <br />
 
-</p>
-<p class="code-western">fn dashboard(req, res){</p>
-<p class="code-western">	session = req.get_session();</p>
-<p class="code-western">	if(session[„authenticated“]){</p>
-<p class="code-western">		res.write(„Authenticated“);</p>
-<p class="code-western">		res.code(200);</p>
-<p class="code-western"><font face="FreeMono, monospace"><span style="font-weight: normal">	}
-</span></font><font face="FreeMono, monospace"><span style="font-weight: normal">else
-{</span></font></p>
-<p class="code-western">		res.location(„/login“);</p>
-<p class="code-western">	}</p>
-<p class="code-western"><font face="FreeMono, monospace"><span style="font-weight: normal">}</span></font>
-</p>
-<p class="western" style="font-style: normal"><br/>
-<br/>
+  </p>
+  <p class="code-western">fn dashboard(req, res){</p>
+  <p class="code-western"> session = req.get_session();</p>
+  <p class="code-western"> if(session[„authenticated“]){</p>
+  <p class="code-western"> res.write(„Authenticated“);</p>
+  <p class="code-western"> res.code(200);</p>
+  <p class="code-western">
+    <font face="FreeMono, monospace"><span style="font-weight: normal"> }
+      </span></font>
+    <font face="FreeMono, monospace"><span style="font-weight: normal">else
+        {</span></font>
+  </p>
+  <p class="code-western"> res.location(„/login“);</p>
+  <p class="code-western"> }</p>
+  <p class="code-western">
+    <font face="FreeMono, monospace"><span style="font-weight: normal">}</span></font>
+  </p>
+  <p class="western" style="font-style: normal"><br />
+    <br />
 
-</p>
-<h4 class="western"><a name="__RefHeading___Toc739_2114970337"></a>Loop
-Statements</h4>
-<p class="western">The <b>Loop</b><b> Statements, </b><font face="FreeMono, monospace"><span style="font-weight: normal">F</span></font><font face="FreeMono, monospace"><span style="font-weight: normal">OR</span></font><font face="FreeMono, monospace"><span style="font-weight: normal">
-</span></font><font face="Arial, sans-serif"><span style="font-weight: normal">and
-</span></font><font face="FreeMono, monospace"><span style="font-weight: normal">WHILE</span></font><font face="FreeMono, monospace"><span style="font-weight: normal">
-</span></font><font face="Arial, sans-serif"><span style="font-weight: normal">repeat
-segments of code several times, until an exit condition is met.</span></font></p>
-<p class="western" style="font-weight: normal"><br/>
-<br/>
+  </p>
+  <h4 class="western"><a name="__RefHeading___Toc739_2114970337"></a>Loop
+    Statements</h4>
+  <p class="western">The <b>Loop</b><b> Statements, </b>
+    <font face="FreeMono, monospace"><span style="font-weight: normal">F</span></font>
+    <font face="FreeMono, monospace"><span style="font-weight: normal">OR</span></font>
+    <font face="FreeMono, monospace"><span style="font-weight: normal">
+      </span></font>
+    <font face="Arial, sans-serif"><span style="font-weight: normal">and
+      </span></font>
+    <font face="FreeMono, monospace"><span style="font-weight: normal">WHILE</span></font>
+    <font face="FreeMono, monospace"><span style="font-weight: normal">
+      </span></font>
+    <font face="Arial, sans-serif"><span style="font-weight: normal">repeat
+        segments of code several times, until an exit condition is met.</span></font>
+  </p>
+  <p class="western" style="font-weight: normal"><br />
+    <br />
 
-</p>
-<p class="western"><font face="Arial, sans-serif"><b>The FOR/UNTIL
-Loop</b></font></p>
-<p class="western">Unlike Python, the JNS-For-Loop is a <i>Counting</i><span style="font-style: normal">
-loop, meaning that it doesn’t iterate through Iterables, it counts
-up (or down). It follows the following Structure:</span></p>
-<p class="western"><br/>
-<br/>
+  </p>
+  <p class="western">
+    <font face="Arial, sans-serif"><b>The FOR/UNTIL
+        Loop</b></font>
+  </p>
+  <p class="western">Unlike Python, the JNS-For-Loop is a <i>Counting</i><span style="font-style: normal">
+      loop, meaning that it doesn’t iterate through Iterables, it counts
+      up (or down). It follows the following Structure:</span></p>
+  <p class="western"><br />
+    <br />
 
-</p>
-<p class="code-western">for counter=0 until 10 step 1{</p>
-<p class="code-western">	print(„Statements here...“); 
-</p>
-<p class="code-western">}</p>
-<p class="western"><font face="Arial, sans-serif">This Loop Starts at
-0 and repeats the statements until <font face="FreeMono, monospace">counter</font>
-+ 1 = 10</font></p>
-<p class="western"><br/>
-<br/>
+  </p>
+  <p class="code-western">for counter=0 until 10 step 1{</p>
+  <p class="code-western"> print(„Statements here...“);
+  </p>
+  <p class="code-western">}</p>
+  <p class="western">
+    <font face="Arial, sans-serif">This Loop Starts at
+      0 and repeats the statements until <font face="FreeMono, monospace">counter</font>
+      + 1 = 10</font>
+  </p>
+  <p class="western"><br />
+    <br />
 
-</p>
-<p class="western"><font face="Arial, sans-serif"><b>Example 3.3.3:
-FOR/UNTIL</b></font></p>
-<p class="western">The following Code is a practical example of
-calculating the Factorial of <i>n</i></p>
-<p class="code-western">fn fac(n){</p>
-<p class="code-western">	total = n;</p>
-<p class="code-western">	for i=1 until n step 1{</p>
-<p class="code-western">		total *= i;</p>
-<p class="code-western">	}</p>
-<p class="code-western">	return total;</p>
-<p class="code-western">} 
-</p>
-<p class="western" style="font-style: normal"><font face="Arial, sans-serif"><b>The
-FOREACH Loop</b></font></p>
-<p class="western" style="font-style: normal; font-weight: normal"><font face="Arial, sans-serif">Most
-Programmers will be used to some kind of For/Each Loop in the Modern
-day, so they don’t have to write countless and countless For/Until
-Loops. In JNS, For/Each-in works in 2 Ways: The recommended one and
-the cheaty one.</font></p>
-<p class="western" style="font-style: normal; font-weight: normal"><font face="Arial, sans-serif">The
-Recommended one:</font></p>
-<p class="western" style="font-style: normal; font-weight: normal"><br/>
-<br/>
+  </p>
+  <p class="western">
+    <font face="Arial, sans-serif"><b>Example 3.3.3:
+        FOR/UNTIL</b></font>
+  </p>
+  <p class="western">The following Code is a practical example of
+    calculating the Factorial of <i>n</i></p>
+  <p class="code-western">fn fac(n){</p>
+  <p class="code-western"> total = n;</p>
+  <p class="code-western"> for i=1 until n step 1{</p>
+  <p class="code-western"> total *= i;</p>
+  <p class="code-western"> }</p>
+  <p class="code-western"> return total;</p>
+  <p class="code-western">}
+  </p>
+  <p class="western" style="font-style: normal">
+    <font face="Arial, sans-serif"><b>The
+        FOREACH Loop</b></font>
+  </p>
+  <p class="western" style="font-style: normal; font-weight: normal">
+    <font face="Arial, sans-serif">Most
+      Programmers will be used to some kind of For/Each Loop in the Modern
+      day, so they don’t have to write countless and countless For/Until
+      Loops. In JNS, For/Each-in works in 2 Ways: The recommended one and
+      the cheaty one.</font>
+  </p>
+  <p class="western" style="font-style: normal; font-weight: normal">
+    <font face="Arial, sans-serif">The
+      Recommended one:</font>
+  </p>
+  <p class="western" style="font-style: normal; font-weight: normal"><br />
+    <br />
 
-</p>
-<p class="code-western">const myArray = [1,2,3,4,5];</p>
-<p class="code-western"><font face="FreeMono, monospace"><span style="font-style: normal">//</span></font><font face="FreeMono, monospace"><span style="font-style: normal">Method
-1 – Using the Arrays Library</span></font></p>
-<p class="code-western">#include &lt;arrays&gt;</p>
-<p class="code-western">foreach(myArray, lambda i: print(i));</p>
-<p class="code-western">//Method 2</p>
-<p class="code-western">array.items.foreach(lambda i: print(i));</p>
-<p class="western" style="font-style: normal; font-weight: normal"><font face="Arial, sans-serif">JNS
-reads For/Until loops like mentioned above. However, to avoid getting
-stuck, it adds a marker to each transpiled For-Loop. If the word
-„#transpiled“ is found, the Transpiler will assume that the Loop
-already has been processed. That’s why you can write #transpiled at
-the end of a Python-For Loop</font></p>
-<p class="western" style="font-style: normal"><font face="Arial, sans-serif"><b>The
-WHILE/DO Loop</b></font></p>
-<p class="western" style="font-weight: normal"><font face="Arial, sans-serif"><span style="font-style: normal">The
-WHILE-Loop repeats Sequences of Code until a condition is met.
-</span><span style="font-style: normal">„Condition being met“
-means it has a Boolean Value of TRUE. This can be something like
-</span><font face="FreeMono, monospace"><span style="font-style: normal">input
-== „Hello“</span></font><span style="font-style: normal"> or any
-other condition (See </span><span style="font-style: normal"><b>IF/THEN</b></span><span style="font-style: normal">-Statements
-for reference). </span><span style="font-style: normal">Generally,
-WHILE-Loops look like this:</span></font></p>
-<p class="code-western">while(condition){</p>
-<p class="code-western">	print(„Statements...“);</p>
-<p class="code-western">}	</p>
-<h2 class="western"><a name="__RefHeading___Toc239_2580831390"></a>3.3 JNS
-Subprograms</h2>
-<p class="western">A Subprogram is a named JNS Block that can be
-invoked repeatedly.</p>
-<p class="western">A Subprogram is either a Procedure or a function.
-Typically, you use procedures to perform an action and functions to
-compute and return a value.</p>
-<p class="western"><br/>
-<br/>
+  </p>
+  <p class="code-western">const myArray = [1,2,3,4,5];</p>
+  <p class="code-western">
+    <font face="FreeMono, monospace"><span style="font-style: normal">//</span></font>
+    <font face="FreeMono, monospace"><span style="font-style: normal">Method
+        1 – Using the Arrays Library</span></font>
+  </p>
+  <p class="code-western">#include &lt;arrays&gt;</p>
+  <p class="code-western">foreach(myArray, lambda i: print(i));</p>
+  <p class="code-western">//Method 2</p>
+  <p class="code-western">array.items.foreach(lambda i: print(i));</p>
+  <p class="western" style="font-style: normal; font-weight: normal">
+    <font face="Arial, sans-serif">JNS
+      reads For/Until loops like mentioned above. However, to avoid getting
+      stuck, it adds a marker to each transpiled For-Loop. If the word
+      „#transpiled“ is found, the Transpiler will assume that the Loop
+      already has been processed. That’s why you can write #transpiled at
+      the end of a Python-For Loop</font>
+  </p>
+  <p class="western" style="font-style: normal">
+    <font face="Arial, sans-serif"><b>The
+        WHILE/DO Loop</b></font>
+  </p>
+  <p class="western" style="font-weight: normal">
+    <font face="Arial, sans-serif"><span style="font-style: normal">The
+        WHILE-Loop repeats Sequences of Code until a condition is met.
+      </span><span style="font-style: normal">„Condition being met“
+        means it has a Boolean Value of TRUE. This can be something like
+      </span>
+      <font face="FreeMono, monospace"><span style="font-style: normal">input
+          == „Hello“</span></font><span style="font-style: normal"> or any
+        other condition (See </span><span style="font-style: normal"><b>IF/THEN</b></span><span
+        style="font-style: normal">-Statements
+        for reference). </span><span style="font-style: normal">Generally,
+        WHILE-Loops look like this:</span>
+    </font>
+  </p>
+  <p class="code-western">while(condition){</p>
+  <p class="code-western"> print(„Statements...“);</p>
+  <p class="code-western">} </p>
+  <h2 class="western"><a name="__RefHeading___Toc239_2580831390"></a>3.3 JNS
+    Subprograms</h2>
+  <p class="western">A Subprogram is a named JNS Block that can be
+    invoked repeatedly.</p>
+  <p class="western">A Subprogram is either a Procedure or a function.
+    Typically, you use procedures to perform an action and functions to
+    compute and return a value.</p>
+  <p class="western"><br />
+    <br />
 
-</p>
-<p class="western"><span style="text-decoration: none"><b>T</b></span><span style="text-decoration: none"><b>OPICS</b></span></p>
-<ul>
-	<li><p class="western"><b>Reasons to use Subprograms</b></p>
-	<li><p class="western"><b>Declaration and Invokation</b></p>
-	<li><p class="western"><b>Recursive Subprograms</b></p>
-	<li><p class="western"><b>Subprograms in Packages</b></p>
-</ul>
-<h4 class="western"><a name="__RefHeading___Toc741_2114970337"></a>Reasons
-to use Subprograms</h4>
-<p class="western">Subprograms support the development and
-maintenance of reliable, reusable code</p>
-<p class="western">with the following features:</p>
-<ul>
-	<li><p class="western"><b>Modularity</b></p>
-</ul>
-<p class="western">	Subprograms let you break a program into
-manageable, well-defined modules.</p>
-<ul>
-	<li><p class="western"><b>Easier Application Design</b></p>
-</ul>
-<p class="western">	When designing an application, you can defer the
-implementation details of 	the subprograms until you have tested the
-main program, and then refine 	them one step at a time. (To define a
-subprogram without implementation 	details, use 	the ... Operator, as
-in Example 3.4.1.)</p>
-<ul>
-	<li><p class="western"><b>Maintainability</b></p>
-</ul>
-<p class="western">	You can change the implementation details of a
-subprogram without 		changing its invokers.</p>
-<ul>
-	<li><p class="western"><b>Packageability</b></p>
-</ul>
-<p class="western">	Subprograms can be grouped into packages, whose
-advantages are 	explained in &quot;Reasons to Use Packages&quot;.</p>
-<ul>
-	<li><p class="western"><b>Reusability</b></p>
-</ul>
-<p class="western">	Any number of applications, in many different
-environments, can use the same</p>
-<p class="western">	package subprogram or standalone subprogram.</p>
-<h4 class="western"><a name="__RefHeading___Toc743_2114970337"></a>Declaration
-and Invocation</h4>
-<p class="western" style="font-weight: normal"><br/>
-<br/>
+  </p>
+  <p class="western"><span style="text-decoration: none"><b>T</b></span><span
+      style="text-decoration: none"><b>OPICS</b></span></p>
+  <ul>
+    <li>
+      <p class="western"><b>Reasons to use Subprograms</b></p>
+    <li>
+      <p class="western"><b>Declaration and Invokation</b></p>
+    <li>
+      <p class="western"><b>Recursive Subprograms</b></p>
+    <li>
+      <p class="western"><b>Subprograms in Packages</b></p>
+  </ul>
+  <h4 class="western"><a name="__RefHeading___Toc741_2114970337"></a>Reasons
+    to use Subprograms</h4>
+  <p class="western">Subprograms support the development and
+    maintenance of reliable, reusable code</p>
+  <p class="western">with the following features:</p>
+  <ul>
+    <li>
+      <p class="western"><b>Modularity</b></p>
+  </ul>
+  <p class="western"> Subprograms let you break a program into
+    manageable, well-defined modules.</p>
+  <ul>
+    <li>
+      <p class="western"><b>Easier Application Design</b></p>
+  </ul>
+  <p class="western"> When designing an application, you can defer the
+    implementation details of the subprograms until you have tested the
+    main program, and then refine them one step at a time. (To define a
+    subprogram without implementation details, use the ... Operator, as
+    in Example 3.4.1.)</p>
+  <ul>
+    <li>
+      <p class="western"><b>Maintainability</b></p>
+  </ul>
+  <p class="western"> You can change the implementation details of a
+    subprogram without changing its invokers.</p>
+  <ul>
+    <li>
+      <p class="western"><b>Packageability</b></p>
+  </ul>
+  <p class="western"> Subprograms can be grouped into packages, whose
+    advantages are explained in &quot;Reasons to Use Packages&quot;.</p>
+  <ul>
+    <li>
+      <p class="western"><b>Reusability</b></p>
+  </ul>
+  <p class="western"> Any number of applications, in many different
+    environments, can use the same</p>
+  <p class="western"> package subprogram or standalone subprogram.</p>
+  <h4 class="western"><a name="__RefHeading___Toc743_2114970337"></a>Declaration
+    and Invocation</h4>
+  <p class="western" style="font-weight: normal"><br />
+    <br />
 
-</p>
-<p class="western"><span style="font-weight: normal">You can create a
-subprogram either inside a </span><span style="font-weight: normal">JNS</span><span style="font-weight: normal">
-block (which can be another</span></p>
-<p class="western"><span style="font-weight: normal">subprogram), </span><span style="font-weight: normal">or
-at Global Level</span><span style="font-weight: normal">.</span></p>
-<p class="western"><span style="font-weight: normal">A subprogram
-created inside a </span><span style="font-weight: normal">JNS</span><span style="font-weight: normal">
-block is a nested subprogram. You can either</span></p>
-<p class="western" style="font-weight: normal">declare and define it
-at the same time, or you can declare it first and then define it
-later in the same block (see &quot;Forward Declaration&quot;).</p>
-<p class="western" style="font-weight: normal">A subprogram created
-inside a package is a package subprogram. You declare it in</p>
-<p class="western"><span style="font-weight: normal">the package
-specification and define it in the package body. It is stored in the
-database until you </span><span style="font-weight: normal">forget()</span><span style="font-weight: normal">
-the package. (Packages are described in </span><i><span style="font-weight: normal">JNS
-</span></i><i><span style="font-weight: normal">Packages </span></i><i><span style="font-weight: normal">and
-R4-Notation</span></i><span style="font-weight: normal">.)</span></p>
-<p class="western" style="font-weight: normal"><br/>
-<br/>
+  </p>
+  <p class="western"><span style="font-weight: normal">You can create a
+      subprogram either inside a </span><span style="font-weight: normal">JNS</span><span style="font-weight: normal">
+      block (which can be another</span></p>
+  <p class="western"><span style="font-weight: normal">subprogram), </span><span style="font-weight: normal">or
+      at Global Level</span><span style="font-weight: normal">.</span></p>
+  <p class="western"><span style="font-weight: normal">A subprogram
+      created inside a </span><span style="font-weight: normal">JNS</span><span style="font-weight: normal">
+      block is a nested subprogram. You can either</span></p>
+  <p class="western" style="font-weight: normal">declare and define it
+    at the same time, or you can declare it first and then define it
+    later in the same block (see &quot;Forward Declaration&quot;).</p>
+  <p class="western" style="font-weight: normal">A subprogram created
+    inside a package is a package subprogram. You declare it in</p>
+  <p class="western"><span style="font-weight: normal">the package
+      specification and define it in the package body. It is stored in the
+      database until you </span><span style="font-weight: normal">forget()</span><span style="font-weight: normal">
+      the package. (Packages are described in </span><i><span style="font-weight: normal">JNS
+      </span></i><i><span style="font-weight: normal">Packages </span></i><i><span style="font-weight: normal">and
+        R4-Notation</span></i><span style="font-weight: normal">.)</span></p>
+  <p class="western" style="font-weight: normal"><br />
+    <br />
 
-</p>
-<p class="western"><span style="font-weight: normal">A subprogram
-created at </span><span style="font-weight: normal">global</span><span style="font-weight: normal">
-level is a standalone subprogram. You create it with</span></p>
-<p class="western"><span style="font-weight: normal">the</span><b>
-</b><b>fn</b><span style="font-weight: normal">-</span><span style="font-weight: normal">statement.
-</span>
-</p>
-<p class="code-western">fn main() {</p>
-<p class="code-western">        print(„Hello World“);</p>
-<p class="code-western">}</p>
-<p class="western">You can also specify parameters that will be
-passed into the subprogram’s body:</p>
-<p class="code-western">fn add(a,b){</p>
-<p class="code-western">	return a+b</p>
-<p class="code-western">}</p>
-<p class="western">A subprogram invocation has this form:</p>
-<p class="code-western">subprogram_name ( parameter, parameter... )</p>
-<p class="western">If the subprogram has no parameters, or specifies
-a default value for every parameter, you can either omit the
-parameter list or specify an empty parameter list.</p>
-<p class="western">A procedure invocation is a JNS statement. For
-example:</p>
-<p class="code-western">raise_salary(employee_id, amount);</p>
-<p class="western">A function invocation is an expression. For
-example:</p>
-<p class="code-western">new_salary = get_salary(employee_id);</p>
-<p class="code-western">if (salary_ok(new_salary, new_title)){</p>
-<p class="code-western">	...;</p>
-<p class="code-western">}</p>
-<p class="code-western" style="font-weight: normal"><br/>
+  </p>
+  <p class="western"><span style="font-weight: normal">A subprogram
+      created at </span><span style="font-weight: normal">global</span><span style="font-weight: normal">
+      level is a standalone subprogram. You create it with</span></p>
+  <p class="western"><span style="font-weight: normal">the</span><b>
+    </b><b>fn</b><span style="font-weight: normal">-</span><span style="font-weight: normal">statement.
+    </span>
+  </p>
+  <p class="code-western">fn main() {</p>
+  <p class="code-western"> print(„Hello World“);</p>
+  <p class="code-western">}</p>
+  <p class="western">You can also specify parameters that will be
+    passed into the subprogram’s body:</p>
+  <p class="code-western">fn add(a,b){</p>
+  <p class="code-western"> return a+b;</p>
+  <p class="code-western">}</p>
+  <p class="western">A subprogram invocation has this form:</p>
+  <p class="code-western">subprogram_name ( parameter, parameter... )</p>
+  <p class="western">If the subprogram has no parameters, or specifies
+    a default value for every parameter, you can either omit the
+    parameter list or specify an empty parameter list.</p>
+  <p class="western">A procedure invocation is a JNS statement. For
+    example:</p>
+  <p class="code-western">raise_salary(employee_id, amount);</p>
+  <p class="western">A function invocation is an expression. For
+    example:</p>
+  <p class="code-western">new_salary = get_salary(employee_id);</p>
+  <p class="code-western">if (salary_ok(new_salary, new_title)){</p>
+  <p class="code-western"> ...;</p>
+  <p class="code-western">}</p>
+  <p class="code-western" style="font-weight: normal"><br />
 
-</p>
-<h4 class="western"><a name="__RefHeading___Toc745_2114970337"></a>Recursive
-Subprograms</h4>
-<p class="western">Recursive Subprograms are Subprograms that call
-themselves with similar, yet different Parameters. A Recursive
-subprogram usually first checks if a condition is met („Is the
-Problem simple?“). If so, it stops and returns the problem
-immediately, else it simplifies the Problem and calls itself with the
-simplified Problem. Recursions can look like this:</p>
-<p class="code-western">fn fac(n):</p>
-<p class="code-western">	if(n&lt;=1){</p>
-<p class="code-western">			return n;</p>
-<p class="code-western">	}</p>
-<p class="code-western">	else {</p>
-<p class="code-western">			return fac(n-1)*n;</p>
-<p class="code-western">	}</p>
-<p class="code-western">}</p>
-<p class="western">or like this:</p>
-<p class="code-western">@recursive(lambda n: n &gt; 1)</p>
-<p class="code-western">fn fac(n){</p>
-<p class="code-western">	return fac(n-1)*n;</p>
-<p class="code-western">}</p>
-<h4 class="western"><a name="__RefHeading___Toc747_2114970337"></a>Subprograms
-in Packages</h4>
-<p class="western">You can use the <font face="FreeMono, monospace">#include
-</font><font face="Arial, sans-serif">Statement to import a package.
-This will lead to all Subprograms inside this Package to be added to
-your global Variables. </font><font face="Arial, sans-serif">Thanks
-to the R4-Notation, you can now also write this code to include
-specific Subprograms from a package:</font></p>
-<p class="code-western">import fn1, fn2 from module;</p>
-<p class="code-western"><br/>
+  </p>
+  <h4 class="western"><a name="__RefHeading___Toc745_2114970337"></a>Recursive
+    Subprograms</h4>
+  <p class="western">Recursive Subprograms are Subprograms that call
+    themselves with similar, yet different Parameters. A Recursive
+    subprogram usually first checks if a condition is met („Is the
+    Problem simple?“). If so, it stops and returns the problem
+    immediately, else it simplifies the Problem and calls itself with the
+    simplified Problem. Recursions can look like this:</p>
+  <p class="code-western">fn fac(n):</p>
+  <p class="code-western"> if(n&lt;=1){</p>
+  <p class="code-western"> return n;</p>
+  <p class="code-western"> }</p>
+  <p class="code-western"> else {</p>
+  <p class="code-western"> return fac(n-1)*n;</p>
+  <p class="code-western"> }</p>
+  <p class="code-western">}</p>
+  <p class="western">or like this:</p>
+  <p class="code-western">@recursive(lambda n: n &gt; 1)</p>
+  <p class="code-western">fn fac(n){</p>
+  <p class="code-western"> return fac(n-1)*n;</p>
+  <p class="code-western">}</p>
+  <h4 class="western"><a name="__RefHeading___Toc747_2114970337"></a>Subprograms
+    in Packages</h4>
+  <p class="western">You can use the <font face="FreeMono, monospace">#include
+    </font>
+    <font face="Arial, sans-serif">Statement to import a package.
+      This will lead to all Subprograms inside this Package to be added to
+      your global Variables. If you're using the latest intern Build, you can also use R4-Syntax. </font>
+    <font face="Arial, sans-serif">Thanks
+      to the R4-Notation, you can now also write this code to include
+      specific Subprograms from a package:</font>
+  </p>
+  <p class="code-western">import fn1, fn2 from module;</p>
+  <p class="code-western"><br />
 
-</p>
-<p class="code-western"><br/>
+  </p>
+  <p class="code-western"><br />
 
-</p>
-<h2 class="western"><a name="__RefHeading___Toc241_2580831390"></a>3.4 JNS
-Packages and R4-Notation</h2>
-<p class="western">A package is a namespace object that groups
-logically related JNS structures, variables, constants, subprograms
-and exceptions. A package is compiled and stored in the database,
-where many applications can share its contents.</p>
-<p class="western">A package always has a specification, which
-declares the public items that can be</p>
-<p class="western">referenced from outside the package. If the public
-items include cursors or subprograms, then the package must also have
-a body. The body must define queries for public cursors and code for
-public</p>
-<p class="western">subprograms. The body can also declare and define
-private items that cannot be</p>
-<p class="western">referenced from outside the package, but are
-necessary for the internal workings of the package. Finally, the body
-can have an initialization part, whose statements initialize
-variables and do other one-time setup steps, and an
-exception-handling part. You can change the body without changing the
-specification or the references to the public items; therefore, you
-can think of the package body as a black box.</p>
-<p class="western"><span style="text-decoration: none"><b>T</b></span><span style="text-decoration: none"><b>OPICS</b></span></p>
-<ul>
-	<li><p class="western"><b>Reasons to use Packages</b></p>
-	<li><p class="western"><b>Declaration (Pre-R4)</b></p>
-	<li><p class="western"><b>Declaration (Post-R4)</b></p>
-</ul>
-<h4 class="western"><a name="__RefHeading___Toc749_2114970337"></a>Reasons
-to use Packages</h4>
-<p class="western">Packages support the development and maintenance
-of reliable, reusable code with</p>
-<p class="western">the following features:</p>
-<ul>
-	<li><p class="western">Modularity</p>
-</ul>
-<p class="western">	Packages let you encapsulate logically related
-types, variables, constants,</p>
-<p class="western">	subprograms, cursors, and exceptions in named
-PL/SQL modules. You can 	make each package easy to understand, and
-make the interfaces between 	packages simple, clear, and well
-defined. This practice aids application 	development.</p>
-<ul>
-	<li><p class="western">Easier Application Design</p>
-</ul>
-<p class="western">	When designing an application, all you need
-initially is the interface 	information in the package
-specifications. You can code and compile 	specifications without
-their bodies. Next, you can compile standalone 	subprograms that
-reference the packages. You need not fully define the 	package bodies
-until you are ready to complete the application.</p>
-<h4 class="western"><a name="__RefHeading___Toc751_2114970337"></a>Declaration
-(Pre-R4)</h4>
-<p class="western">The R4-Notation (Revision 4) adds lots of new
-functionality to JNS, but at this point it’s still in early beta.
-If you’re using the latest stable Version of JNS, you can create a
-package using the distlib Library. For this, you need a file called
-__package__.jns  . This File needs to follow this pattern:</p>
-<p class="code-western">#include &lt;distlib&gt;</p>
-<p class="code-western">package = info();</p>
-<p class="code-western">package.name = „Package Name“;</p>
-<p class="code-western">package.include_name = „include_name“;</p>
-<p class="code-western">package.author = „your name“; 
-</p>
-<p class="code-western">// You can also write package = getuname();,
-which will just 
-</p>
-<p class="code-western">//use your login username.</p>
-<p class="code-western">package.includes = [„file1“, „file2“];
-//write all the include-Names you want to use in your Package</p>
-<p class="code-western">make_package(package);</p>
-<p class="western"><br/>
-<br/>
+  </p>
+  <h2 class="western"><a name="__RefHeading___Toc241_2580831390"></a>3.4 JNS
+    Packages and R4-Notation</h2>
+  <p class="western">A package is a namespace object that groups
+    logically related JNS structures, variables, constants, subprograms
+    and exceptions. A package is compiled and stored in the database,
+    where many applications can share its contents.</p>
+  <p class="western">A package always has a specification, which
+    declares the public items that can be</p>
+  <p class="western">referenced from outside the package. If the public
+    items include cursors or subprograms, then the package must also have
+    a body. The body must define queries for public cursors and code for
+    public</p>
+  <p class="western">subprograms. The body can also declare and define
+    private items that cannot be</p>
+  <p class="western">referenced from outside the package, but are
+    necessary for the internal workings of the package. Finally, the body
+    can have an initialization part, whose statements initialize
+    variables and do other one-time setup steps, and an
+    exception-handling part. You can change the body without changing the
+    specification or the references to the public items; therefore, you
+    can think of the package body as a black box.</p>
+  <p class="western"><span style="text-decoration: none"><b>T</b></span><span
+      style="text-decoration: none"><b>OPICS</b></span></p>
+  <ul>
+    <li>
+      <p class="western"><b>Reasons to use Packages</b></p>
+    <li>
+      <p class="western"><b>Declaration (Pre-R4)</b></p>
+    <li>
+      <p class="western"><b>Declaration (Post-R4)</b></p>
+  </ul>
+  <h4 class="western"><a name="__RefHeading___Toc749_2114970337"></a>Reasons
+    to use Packages</h4>
+  <p class="western">Packages support the development and maintenance
+    of reliable, reusable code with</p>
+  <p class="western">the following features:</p>
+  <ul>
+    <li>
+      <p class="western">Modularity</p>
+  </ul>
+  <p class="western"> Packages let you encapsulate logically related
+    types, variables, constants,</p>
+  <p class="western"> subprograms, cursors, and exceptions in named
+    PL/SQL modules. You can make each package easy to understand, and
+    make the interfaces between packages simple, clear, and well
+    defined. This practice aids application development.</p>
+  <ul>
+    <li>
+      <p class="western">Easier Application Design</p>
+  </ul>
+  <p class="western"> When designing an application, all you need
+    initially is the interface information in the package
+    specifications. You can code and compile specifications without
+    their bodies. Next, you can compile standalone subprograms that
+    reference the packages. You need not fully define the package bodies
+    until you are ready to complete the application.</p>
+  <h4 class="western"><a name="__RefHeading___Toc751_2114970337"></a>Declaration
+    (Pre-R4)</h4>
+  <p class="western">The R4-Notation (Revision 4) adds lots of new
+    functionality to JNS, but at this point it’s still in early beta.
+    If you’re using the latest stable Version of JNS, you can create a
+    package using the distlib Library. For this, you need a file called
+    __package__.jns . This File needs to follow this pattern:</p>
+  <p class="code-western">#include &lt;distlib&gt;</p>
+  <p class="code-western">package = info();</p>
+  <p class="code-western">package.name = „Package Name“;</p>
+  <p class="code-western">package.include_name = „include_name“;</p>
+  <p class="code-western">package.author = „your name“;
+  </p>
+  <p class="code-western">// You can also write package = getuname();,
+    which will just
+  </p>
+  <p class="code-western">//use your login username.</p>
+  <p class="code-western">package.includes = [„file1“, „file2“];
+    //write all the include-Names you want to use in your Package</p>
+  <p class="code-western">make_package(package);</p>
+  <p class="western"><br />
+    <br />
 
-</p>
-<p class="western">The above code will create a long, long, long File
-that’s named „[include_name].jns“. This File contains all the
-code you specified in <i>package.includes</i><span style="font-style: normal">.
-You can now </span><font face="FreeMono, monospace"><span style="font-style: normal">#include
-&lt;include_name&gt;</span></font><font face="Arial, sans-serif"><span style="font-style: normal">
-to invoke your Package.</span></font></p>
-<h4 class="western"><a name="__RefHeading___Toc753_2114970337"></a>Declaration
-(Post-R4)</h4>
-<p class="western">Revision 4 is a currently experimental Release of
-JNS. It simplifies many things, for example the package declaration.
-To create a Package now, create a file that is named
-<i>include_name</i><span style="font-style: normal">.jns, with the
-following code:</span></p>
-<p class="code-western">package author:name;</p>
-<p class="code-western">namespace file1;</p>
-<p class="code-western">namespace file2;</p>
-<p class="western">The first line declares your Package Metadata.
-Then you write <font face="FreeMono, monospace"><span style="font-style: normal">namespace
-</span></font><font face="FreeMono, monospace"><i>module</i></font><font face="FreeMono, monospace"><span style="font-style: normal">;
-</span></font><font face="Arial, sans-serif"><span style="font-style: normal">For</span></font><font face="Atial"><span style="font-style: normal">
-</span></font><font face="Arial, sans-serif"><span style="font-style: normal">each
-file you want to include. Note that R4-Packages can only be included
-using the R4-Notation: </span></font><font face="FreeMono, monospace"><span style="font-style: normal">import
-file1, file2 from package; </span></font>
-</p>
-<p class="code-western"><br/>
+  </p>
+  <p class="western">The above code will create a long, long, long File
+    that’s named „[include_name].jns“. This File contains all the
+    code you specified in <i>package.includes</i><span style="font-style: normal">.
+      You can now </span>
+    <font face="FreeMono, monospace"><span style="font-style: normal">#include
+        &lt;include_name&gt;</span></font>
+    <font face="Arial, sans-serif"><span style="font-style: normal">
+        to invoke your Package.</span></font>
+  </p>
+  <h4 class="western"><a name="__RefHeading___Toc753_2114970337"></a>Declaration
+    (Post-R4)</h4>
+  <p class="western">Revision 4 is a currently experimental Release of
+    JNS. It simplifies many things, for example the package declaration.
+    To create a Package now, create a file that is named
+    <i>include_name</i><span style="font-style: normal">.jns, with the
+      following code:</span>
+  </p>
+  <p class="code-western">package author:name;</p>
+  <p class="code-western">namespace file1;</p>
+  <p class="code-western">namespace file2;</p>
+  <p class="western">The first line declares your Package Metadata.
+    Then you write <font face="FreeMono, monospace"><span style="font-style: normal">namespace
+      </span></font>
+    <font face="FreeMono, monospace"><i>module</i></font>
+    <font face="FreeMono, monospace"><span style="font-style: normal">;
+      </span></font>
+    <font face="Arial, sans-serif"><span style="font-style: normal">For</span></font>
+    <font face="Atial"><span style="font-style: normal">
+      </span></font>
+    <font face="Arial, sans-serif"><span style="font-style: normal">each
+        file you want to include. Note that R4-Packages can only be included
+        using the R4-Notation: </span></font>
+    <font face="FreeMono, monospace"><span style="font-style: normal">import
+        file1, file2 from package; </span></font>
+  </p>
+  <p class="code-western"><br />
 
-</p>
-<h2 class="western"><a name="__RefHeading___Toc243_2580831390"></a>3.5 JNS
-Pragma List</h2>
-<p class="western">Pragmas are used to pass information to the
-Transpiler at runtime. This list contains all Pragmas that have an
-effect on the TP:</p>
-<ul>
-	<li><p class="western"><b>NP_INCLUDE, &lt;module name&gt;</b>: If
-	&lt;module_name&gt; is imported at any point inside the code, it
-	will get stripped out. Useful when facing compatibility Issues.</p>
-	<li><p class="western"><b>PO_PLATFORM, [win32|linux|darwin]</b><span style="font-weight: normal">:
-	Assure that the Platform the code is being executed on is win32
-	(Windows), linux (Linux) or darwin (MacOS)</span></p>
-	<li><p class="western"><b>NP_PLATFORM, [win32|linux|darwin]</b><span style="font-weight: normal">:
-	Assure that the Platform the code is being executed on is</span><b>
-	not </b><span style="font-weight: normal">win32 (Windows), linux
-	(Linux) or darwin (MacOS)</span></p>
-	<li><p class="western"><b>RD_STDOUT, &lt;filename&gt;</b><span style="font-weight: normal">:
-	Redirect STDOUT to a File</span></p>
-	<li><p class="western"><b>RD_STDERR, &lt;filename&gt;</b><span style="font-weight: normal">:
-	Redirect STDERR to a File</span></p>
-</ul>
-<p class="western"><br/>
-<br/>
+  </p>
+  <h2 class="western"><a name="__RefHeading___Toc243_2580831390"></a>3.5 JNS
+    Pragma List</h2>
+  <p class="western">Pragmas are used to pass information to the
+    Transpiler at runtime. This list contains all Pragmas that have an
+    effect on the TP:</p>
+  <ul>
+    <li>
+      <p class="western"><b>NP_INCLUDE, &lt;module name&gt;</b>: If
+        &lt;module_name&gt; is imported at any point inside the code, it
+        will get stripped out. Useful when facing compatibility Issues.</p>
+    <li>
+      <p class="western"><b>PO_PLATFORM, [win32|linux|darwin]</b><span style="font-weight: normal">:
+          Assure that the Platform the code is being executed on is win32
+          (Windows), linux (Linux) or darwin (MacOS)</span></p>
+    <li>
+      <p class="western"><b>NP_PLATFORM, [win32|linux|darwin]</b><span style="font-weight: normal">:
+          Assure that the Platform the code is being executed on is</span><b>
+          not </b><span style="font-weight: normal">win32 (Windows), linux
+          (Linux) or darwin (MacOS)</span></p>
+    <li>
+      <p class="western"><b>RD_STDOUT, &lt;filename&gt;</b><span style="font-weight: normal">:
+          Redirect STDOUT to a File</span></p>
+    <li>
+      <p class="western"><b>RD_STDERR, &lt;filename&gt;</b><span style="font-weight: normal">:
+          Redirect STDERR to a File</span></p>
+  </ul>
+  <p class="western"><br />
+    <br />
 
-</p>
-<h1 class="western"><a name="__RefHeading___Toc344_2763220959"></a>4 Additional
-Information</h1>
-<h2 class="western"><a name="__RefHeading___Toc561_3515687002"></a>4.1 URLs</h2>
-<ul>
-	<li><p class="western">Source Codes:</p>
-</ul>
-<ul>
-	<ul>
-		<li><p class="western">PyJNS:
-		<a class="western" href="https://github.com/JaneScript/pyjns">https://github.com/JaneScriptLang/pyjns</a></p>
-		<li><p class="western">Bootstrapped-JNS:
-		<a class="western" href="https://github.com/JaneScript/janescript">https://github.com/JaneScript</a><a class="western" href="https://github.com/JaneScript/pyjns">Lang</a><a class="western" href="https://github.com/JaneScript/janescript">/janescript</a></p>
-	</ul>
-	<li><p class="western">Homepage: <a class="western" href="https://jnslang.repl.co/">https://jnslang.repl.co</a></p>
-	<li><p class="western">Built in JNS:
-	<a class="western" href="https://jnslang.repl.co/builtinjns.html">https://jnslang.repl.co/builtinjns.html</a></p>
-	<li><p class="western">Sample Projects:
-	<a class="western" href="https://github.com/JaneScriptLang/samples">https://github.com/JaneScriptLang/samples</a></p>
-	<li><p class="western">Online-Manual: <a class="western" href="https://docs.jnslang.repl.co/">https://docs.jnslang.repl.co/</a></p>
-	<li><p class="western">JMake:</p>
-	<ul>
-		<li><p class="western">Website: <a class="western" href="https://jmake.jnslang.repl.co/">https://jmake.jnslang.repl.co/</a></p>
-		<li><p class="western">Source Code:
-		<a class="western" href="https://github.com/JaneScriptLang/jmake">https://github.com/JaneScriptLang/jmake</a></p>
-	</ul>
-</ul>
-<p class="western"><br/>
-<br/>
+  </p>
+  <h1 class="western"><a name="__RefHeading___Toc344_2763220959"></a>4 Additional
+    Information</h1>
+  <h2 class="western"><a name="__RefHeading___Toc561_3515687002"></a>4.1 URLs</h2>
+  <ul>
+    <li>
+      <p class="western">Source Codes:</p>
+  </ul>
+  <ul>
+    <ul>
+      <li>
+        <p class="western">PyJNS:
+          <a class="western" href="https://github.com/JaneScript/pyjns">https://github.com/JaneScriptLang/pyjns</a>
+        </p>
+      <li>
+        <p class="western">Bootstrapped-JNS:
+          <a class="western" href="https://github.com/JaneScript/janescript">https://github.com/JaneScript</a><a
+            class="western" href="https://github.com/JaneScript/pyjns">Lang</a><a class="western"
+            href="https://github.com/JaneScript/janescript">/janescript</a>
+        </p>
+    </ul>
+    <li>
+      <p class="western">Homepage: <a class="western" href="https://jnslang.repl.co/">https://jnslang.repl.co</a></p>
+    <li>
+      <p class="western">Built in JNS:
+        <a class="western" href="https://jnslang.repl.co/builtinjns.html">https://jnslang.repl.co/builtinjns.html</a>
+      </p>
+    <li>
+      <p class="western">Sample Projects:
+        <a class="western"
+          href="https://github.com/JaneScriptLang/samples">https://github.com/JaneScriptLang/samples</a>
+      </p>
+    <li>
+      <p class="western">Online-Manual: <a class="western"
+          href="https://docs.jnslang.repl.co/">https://docs.jnslang.repl.co/</a></p>
+    <li>
+      <p class="western">JMake:</p>
+      <ul>
+        <li>
+          <p class="western">Website: <a class="western"
+              href="https://jmake.jnslang.repl.co/">https://jmake.jnslang.repl.co/</a></p>
+        <li>
+          <p class="western">Source Code:
+            <a class="western"
+              href="https://github.com/JaneScriptLang/jmake">https://github.com/JaneScriptLang/jmake</a>
+          </p>
+      </ul>
+  </ul>
+  <p class="western"><br />
+    <br />
 
-</p>
+  </p>
 </body>
+
 </html>
